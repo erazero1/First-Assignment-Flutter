@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,6 +27,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool _color = true;
+  final r = Random();
   var _text = "Hello World";
   @override
   Widget build(BuildContext context) {
@@ -35,7 +38,7 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Text(_text),
       ),
-      backgroundColor: _color ? Colors.white : Colors.yellow,
+      backgroundColor: _color ? Colors.white : Color.fromARGB(255, r.nextInt(255), r.nextInt(255), r.nextInt(255)),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
